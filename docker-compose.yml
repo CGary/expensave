@@ -3,11 +3,12 @@ services:
     image: algirdasc/expensave
     restart: unless-stopped
     ports:
-      - "18000:18000"
+      - "80:18000"
     env_file:
       - environment
     depends_on:
       - database
+    # docker exec -it expensave-application-1 php bin/console doctrine:migrations:migrate -n
 
   queue:
     image: algirdasc/expensave
